@@ -1,0 +1,4 @@
+cd C:\Users\cliente\Desktop\FOODBOT1\FOODBOT_CLEAN_FOR_RAILWAY
+git remote remove origin
+git remote add origin https://github.com/foodbot1/FOODBOTFINAL2.git
+git push -u origin main
