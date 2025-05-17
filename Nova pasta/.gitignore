@@ -1,0 +1,27 @@
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Firebase admin key
+serviceAccountKey.json
+firebase-adminsdk-*.json
+
+# Env files
+.env
+.env.*
+
+# Railway json (caso use local)
+railway.json
+
+# Frontend build (caso mova Vite pro backend)
+dist/
+public/dist/
+
+# Logs
+logs/
+*.log
+
+# Sistema operacional
+.DS_Store
+Thumbs.db

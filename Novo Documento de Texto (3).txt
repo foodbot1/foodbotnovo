@@ -1,0 +1,10 @@
+1. Cliente entra no site (Netlify)
+2. Clica em “Começar” ? login Google
+3. Frontend captura UID do Firebase
+4. Frontend chama backend: /pagamento?uid=XXX
+5. Stripe redireciona pro checkout
+6. Cliente paga
+7. Stripe aciona webhook (em Railway)
+8. UID é salvo com status: pago no Firebase
+9. Frontend detecta status "pago"
+10. Exibe link da extensão automaticamente

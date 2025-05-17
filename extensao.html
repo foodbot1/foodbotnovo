@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Download da Extensão FoodBot</title>
+</head>
+<body>
+<h2>Verificando pagamento...</h2>
+<script type="module">
+import { initializeApp } from "firebase/app";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyD3CYZqWvMAGnUU5CDujSB04ia0Aq-B6Ic",
+  authDomain: "foodbot-73cc8.firebaseapp.com",
+  databaseURL: "https://foodbot-73cc8-default-rtdb.firebaseio.com",
+  projectId: "foodbot-73cc8",
+  storageBucket: "foodbot-73cc8.firebasestorage.app",
+  messagingSenderId: "757969990378",
+  appId: "1:757969990378:web:d1c1bedaa42d07e8cf5d93"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists() && docSnap.data().status === 'pago') {
+            window.location.href = "https://chrome.google.com/webstore/detail/SEU-LINK-DA-EXTENSÃO";
+        } else {
+            document.body.innerHTML = "<h2>Pagamento não confirmado ainda. Volte em alguns minutos.</h2>";
+        }
+    } else {
+        window.location.href = "/";
+    }
+});
+</script>
+</body>
+</html>

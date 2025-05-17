@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodBot - Login e Pagamento</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
+        button { padding: 15px 25px; font-size: 18px; background-color: #ff0000; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background-color: #cc0000; }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao FoodBot</h1>
+    <p>Clique abaixo para fazer login e adquirir sua extensão</p>
+    <button id="botaoLogin">Login com Google + Comprar</button>
+
+    <script type="module">
+        import { loginAndPay } from './frontend_foodbot.js';
+        document.getElementById("botaoLogin").addEventListener("click", loginAndPay);
+    </script>
+</body>
+</html>
